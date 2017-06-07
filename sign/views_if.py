@@ -67,3 +67,16 @@ def get_event_list(request):
             return JsonResponse({'status':10022,'message':'query result is empty'})
 
 
+# add guest interface
+def add_guest(request):
+    eid = request.POST.get('eid', '')
+    realname = request.POST.get('realname', '')
+    phone = request.POST.get('phone', '')
+    email = request.POST.get('email', '')
+
+    if eid == '' or realname == '' or phone == '':
+        return JsonResponse({'status':10021, 'message':'parameter error'})
+    result = Event.objects.filter(id=eid)
+    if not result:
+        return JsonResponse({})
+
