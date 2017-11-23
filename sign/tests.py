@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class ModelTest(TestCase):
     def setUp(self):
         Event.objects.create(id=1, name="中兴", status=True, limit=500, address='深圳', start_time='2017-10-12')
-        Guest.objects.create(id=1, event_id=1, realname='claudia',phone='15172365963',email='claudia@mail.com', sign=False)
+        Guest.objects.create(id=1, event_id=1,  realname='claudia',phone='15172365963',email='claudia@mail.com', sign=False)
 
     def test_event_models(self):
         result = Event.objects.get(name="中兴")
