@@ -1,6 +1,6 @@
 import sys
 sys.path.append('../db_fixture')
-from nysql_db import DB
+from mysql_db import DB
 
 # 创建测试数据
 
